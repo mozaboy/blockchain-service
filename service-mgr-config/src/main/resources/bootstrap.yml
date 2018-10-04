@@ -1,0 +1,16 @@
+server:
+  port: 49300
+
+spring:
+  application:
+    name: service-mgr-config
+# 配置对应的配置文件
+  profiles:
+    active: dev
+
+# rabbitmq 配置
+#  rabbitmq:
+#    host: localhost
+#    port: 5672
+#    username: guest
+#    password: guest

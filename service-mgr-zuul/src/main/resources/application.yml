@@ -1,0 +1,8 @@
+server:
+  port: 49100
+
+spring:
+  application:
+    name: service-mgr-zuul
+  profiles:
+    active: dev

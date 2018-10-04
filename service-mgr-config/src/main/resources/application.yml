@@ -1,0 +1,16 @@
+#spring.cloud.config.server.git.uri=https://github.com/cd826/SpringcloudSamplesConfig
+#spring.cloud.config.server.git.username=your git username
+#spring.cloud.config.server.git.password=your git password
+
+server:
+  port: 51100
+
+# 统一注册至Eureka集群
+eureka:
+  instance:
+    hostname: localhost
+    lease-renewal-interval-in-seconds: 5
+    lease-expiration-duration-in-seconds: 10
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:52100/eureka/

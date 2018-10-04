@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: service-business-rabbitmq
+  profiles:
+    active: dev

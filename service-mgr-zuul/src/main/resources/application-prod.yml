@@ -1,0 +1,30 @@
+eureka:
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    availabilityZones:
+      default: ${APPLICATION_DOMAIN:${DOMAIN:defaultZone}}
+    serviceUrl:
+      defaultZone: http://ctp.server-mgr-eureka.master.prod:52100/eureka/
+    instance:
+      leaseRenewalIntervalInSeconds: 5
+      leaseExpirationDurationInSeconds: 10
+      preferIpAddress: true
+
+# routes to serviceId
+# 其他微服务jar服务器所在路径请在此配置
+zuul:
+  routes:
+    service-business-mall:
+      path: /service-business-mall/**
+      serviceId: service-business-mall
+    service-business-order:
+      path: /service-business-order/**
+      serviceId: service-business-order
+#routes to url
+    service-business-mall-url:
+      path: /service-business-mall-url/**
+      url: http://localhost:55000/
+    service-business-order-url:
+      path: /service-business-order-url/**
+      url: http://localhost:55100/

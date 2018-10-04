@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  ~ module: ${PROJECT_NAME}
+  ~ file: ${FILE_NAME}
+  ~ date: ${DATE}
+  -->
+
+<configuration scan="true" scanPeriod="60 seconds" debug="false">
+    <!--以文件方式引入-->
+    <!--<include file="src/main/resources/logback/ctp-logback-default.xml"/>-->
+
+    <!--以URL的方式引入-->
+    <include url="http://logback.vonechain.com/ctp-logback-default.xml"/>
+    <include url="http://logback.vonechain.com/ctp-logback-default-prod.xml"/>
+
+    <!--以资源的方式引入-->
+    <!--<include resource="logback/ctp-logback-default-prod.xml"/>-->
+</configuration>

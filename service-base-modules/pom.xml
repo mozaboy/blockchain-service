@@ -1,0 +1,623 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ module: blockchain-service
+  ~ file: pom.xml
+  ~ date: 18-9-19 上午11:54
+  -->
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.service</groupId>
+    <artifactId>blockchain-service</artifactId>
+    <version>0.1.0</version>
+    <packaging>pom</packaging>
+
+    <modules>
+		<module>../service-mgr-eureka</module>
+		<module>../service-mgr-config</module>
+		<module>../service-mgr-zipkin</module>
+		<module>../service-mgr-zuul</module>
+		<module>../service-server-comm</module>
+		<module>../service-server-btc</module>
+		<module>../service-server-eth</module>
+		<module>../service-server-fabric</module>
+		<module>../service-server-mall</module>
+		<module>../service-server-order</module>
+		<module>../service-server-rabbitmq</module>		 
+    </modules>
+
+    <name>blockchain-service</name>
+    <url>http://maven.apache.org</url>
+
+    <description>
+        blockchain-service project for Spring Boot.
+        For unified management of dependent and set versions, other service modules will uniformly introduce dependency
+        from here.
+        Other modules do not need to be versioning, which is based on the version of the module management settings,
+        so as to ensure that all dependency versions are unified.
+    </description>
+
+    <properties>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
+        <fastjson.version>1.2.6</fastjson.version>
+
+        <java.version>1.8</java.version>
+
+        <spring-boot-starter-mail.version>1.5.14.RELEASE</spring-boot-starter-mail.version>
+
+        <!--apectj-->
+        <aspectj.version>1.8.10</aspectj.version>
+        <aspectj.weaver.version>1.8.10</aspectj.weaver.version>
+        <!--BitCoinJ-->
+        <bitcoinj.version>0.14.6</bitcoinj.version>
+
+        <!--Disruptor-->
+        <disruptor.version>3.4.2</disruptor.version>
+        <!--JSONObject -->
+        <fastjson.version>1.2.6</fastjson.version>
+
+        <!--mybatis generator-->
+        <mybatis.generator.version>1.3.6</mybatis.generator.version>
+        <!--mybatis generator maven plugin-->
+        <mybatis.generator.mavenplugin.version>1.3.6</mybatis.generator.mavenplugin.version>
+
+        <!--eureka-->
+        <spring-cloud-commons.version>1.3.3.RELEASE</spring-cloud-commons.version>
+        <spring-cloud-starter-netflix-eureka-client.version>1.4.4.RELEASE</spring-cloud-starter-netflix-eureka-client.version>
+        <spring-cloud-starter-eureka-server.version>1.4.4.RELEASE</spring-cloud-starter-eureka-server.version>
+        <spring-cloud-config-server.version>1.4.3.RELEASE</spring-cloud-config-server.version>
+        <spring-cloud-starter-config.version>1.4.3.RELEASE</spring-cloud-starter-config.version>
+        <spring-cloud-starter-hystrix.version>1.4.4.RELEASE</spring-cloud-starter-hystrix.version>
+        <spring-cloud-starter-hystrix-dashboard.version>1.4.4.RELEASE</spring-cloud-starter-hystrix-dashboard.version>
+        <spring-cloud-starter-feign.version>1.4.4.RELEASE</spring-cloud-starter-feign.version>
+        <spring-cloud-starter-ribbon.version>1.4.4.RELEASE</spring-cloud-starter-ribbon.version>
+        <spring-cloud-starter-zuul.version>1.4.4.RELEASE</spring-cloud-starter-zuul.version>
+        <spring-cloud-starter-sleuth.version>1.3.3.RELEASE</spring-cloud-starter-sleuth.version>
+        <spring-cloud-starter-zipkin.version>1.3.3.RELEASE</spring-cloud-starter-zipkin.version>
+        <spring-cloud-sleuth-zipkin.version>1.3.3.RELEASE</spring-cloud-sleuth-zipkin.version>
+        <zipkin-ui.version>1.40.1</zipkin-ui.version>
+        <zipkin-server.version>2.5.3</zipkin-server.version>
+        <zipkin-autoconfigure-ui.version>2.5.3</zipkin-autoconfigure-ui.version>
+
+        <pagehelper-spring-boot-starter.version>1.2.2</pagehelper-spring-boot-starter.version>
+
+        <!-- lombok -->
+        <lombok.version>1.16.20</lombok.version>
+        <redisson.verion>3.6.3</redisson.verion>
+
+        <spring-cloud-starter-oauth2.version>1.2.1.RELEASE</spring-cloud-starter-oauth2.version>
+
+        <spring-boot-configuration-processor.version>1.5.16.RELEASE</spring-boot-configuration-processor.version>
+
+        <spring-boot-starter-actuator.version>1.5.16.RELEASE</spring-boot-starter-actuator.version>
+
+        <spring-boot-starter-test.version>1.5.16.RELEASE</spring-boot-starter-test.version>
+        <spring-boot-starter-redis.version>1.4.7.RELEASE</spring-boot-starter-redis.version>
+
+        <spring-boot-maven-plugin.version>1.5.16.RELEASE</spring-boot-maven-plugin.version>
+
+        <!-- spring integration-->
+        <spring-core.version>4.3.18.RELEASE</spring-core.version>
+        <spring-integration-core.version>4.3.16.RELEASE</spring-integration-core.version>
+
+        <!--session-->
+        <spring-session.version>1.3.1.RELEASE</spring-session.version>
+
+        <!--web-->
+        <spring-boot-starter.version>1.5.16.RELEASE</spring-boot-starter.version>
+        <spring-boot-starter-web.version>1.5.16.RELEASE</spring-boot-starter-web.version>
+
+        <!--redis-->
+        <spring-boot-starter-data-redis.version>1.5.16.RELEASE</spring-boot-starter-data-redis.version>
+
+        <!--jdbc-->
+        <spring-boot-starter-jdbc.version>1.5.16.RELEASE</spring-boot-starter-jdbc.version>
+
+        <!--mysql-->
+        <mysql-connector-java.version>8.0.11</mysql-connector-java.version>
+
+        <!--mybatis-->
+        <mybatis-spring-boot-starter.version>1.3.2</mybatis-spring-boot-starter.version>
+
+        <!--spring-social-->
+        <spring-social.version>1.1.4.RELEASE</spring-social.version>
+
+        <!--junit-->
+        <junit.version>4.12</junit.version>
+
+        <!--json-->
+        <jackson-module-parameter-names.version>2.9.5</jackson-module-parameter-names.version>
+        <jackson-datatype-jdk8.version>2.9.5</jackson-datatype-jdk8.version>
+        <jackson-core.verison>2.9.6</jackson-core.verison>
+        <gson.version>2.8.0</gson.version>
+        <fastjson.version>1.2.6</fastjson.version>
+
+        <!--jjwt-->
+        <jjwt.version>0.9.0</jjwt.version>
+
+        <!--热部署-->
+        <spring-boot-devtools.version>1.5.16.RELEASE</spring-boot-devtools.version>
+
+        <httpclient.version>4.5.5</httpclient.version>
+
+        <!--albaba-->
+        <alibaba.druid.version>1.1.8</alibaba.druid.version>
+
+        <!--通用Java开发操作包-->
+        <commons-lang.version>2.6</commons-lang.version>
+        <commons-collections.version>3.2.2</commons-collections.version>
+        <commons-beanutils.version>1.9.3</commons-beanutils.version>
+        <commons-io.version>2.6</commons-io.version>
+        <commons-logging.version>1.2</commons-logging.version>
+        <ezmorph.version>1.0.6</ezmorph.version>
+        <json-lib.version>2.4</json-lib.version>
+
+        <!--swagger2 支持-->
+        <springfox-swagger2.verion>2.7.0</springfox-swagger2.verion>
+        <springfox-swagger-ui.version>2.7.0</springfox-swagger-ui.version>
+
+        <!--blockchain wallet-->
+        <web3j.core.version>3.2.0</web3j.core.version>
+
+        <!--build-->
+        <maven-shade-plugin.version>3.1.1</maven-shade-plugin.version>
+        <maven-compiler-plugin.version>3.7.0</maven-compiler-plugin.version>
+        <lombok-maven-plugin.version>1.16.6.1</lombok-maven-plugin.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>io.spring.platform</groupId>
+                <artifactId>platform-bom</artifactId>
+                <version>Brussels-SR9</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>Edgware.SR3</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-core</artifactId>
+                <version>${spring-core.version}</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.springframework.integration/spring-integration-core -->
+            <dependency>
+                <groupId>org.springframework.integration</groupId>
+                <artifactId>spring-integration-core</artifactId>
+                <version>${spring-integration-core.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-mail</artifactId>
+                <version>${spring-boot-starter-mail.version}</version>
+            </dependency>
+
+            <!--aspectj-->
+            <dependency>
+                <groupId>org.aspectj</groupId>
+                <artifactId>aspectjrt</artifactId>
+                <version>${aspectj.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.aspectj</groupId>
+                <artifactId>aspectjweaver</artifactId>
+                <version>${aspectj.weaver.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.github.pagehelper</groupId>
+                <artifactId>pagehelper-spring-boot-starter</artifactId>
+                <version>${pagehelper-spring-boot-starter.version}</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/com.lmax/disruptor -->
+            <!-- Disruptor -->
+            <dependency>
+                <groupId>com.lmax</groupId>
+                <artifactId>disruptor</artifactId>
+                <version>${disruptor.version}</version>
+            </dependency>
+
+            <!-- ========================================================== -->
+            <!-- eureka -->
+            <!-- eureka-client -->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+                <version>${spring-cloud-starter-netflix-eureka-client.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>io.reactivex</groupId>
+                        <artifactId>rxnetty</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-commons</artifactId>
+                <version>${spring-cloud-commons.version}</version>
+            </dependency>
+
+            <!-- eureka server -->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-eureka-server</artifactId>
+                <version>${spring-cloud-starter-eureka-server.version}</version>
+            </dependency>
+
+            <!-- eureka server config -->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-config-server</artifactId>
+                <version>${spring-cloud-config-server.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-config</artifactId>
+                <version>${spring-cloud-starter-config.version}</version>
+            </dependency>
+
+            <!-- service容错保护: hystrix -->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-hystrix</artifactId>
+                <version>${spring-cloud-starter-hystrix.version}</version>
+            </dependency>
+
+            <!-- service容错保护: hystrix dashboard 配套actuator使用，否则会出现错误：Unable to connect to Command Metric Stream -->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-hystrix-dashboard</artifactId>
+                <version>${spring-cloud-starter-hystrix-dashboard.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-actuator</artifactId>
+                <version>${spring-boot-starter-actuator.version}</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-configuration-processor -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-configuration-processor</artifactId>
+                <version>${spring-boot-configuration-processor.version}</version>
+            </dependency>
+
+            <!-- erueka service伪装者:服务间调用 -->
+            <!-- https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-feign -->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-feign</artifactId>
+                <version>${spring-cloud-starter-feign.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-ribbon</artifactId>
+                <version>${spring-cloud-starter-ribbon.version}</version>
+            </dependency>
+
+            <!-- erueka 网关: 路由 -->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-zuul</artifactId>
+                <version>${spring-cloud-starter-zuul.version}</version>
+            </dependency>
+
+            <!-- erueka 服务追踪 -->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-sleuth</artifactId>
+                <version>${spring-cloud-starter-sleuth.version}</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-zipkin -->
+            <!-- sleuth 日志整合 -->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-zipkin</artifactId>
+                <version>${spring-cloud-starter-zipkin.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-sleuth-zipkin</artifactId>
+                <version>${spring-cloud-sleuth-zipkin.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.zipkin</groupId>
+                <artifactId>zipkin-ui</artifactId>
+                <version>${zipkin-ui.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.zipkin.java</groupId>
+                <artifactId>zipkin-server</artifactId>
+                <version>${zipkin-server.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.zipkin.java</groupId>
+                <artifactId>zipkin-autoconfigure-ui</artifactId>
+                <scope>runtime</scope>
+                <version>${zipkin-autoconfigure-ui.version}</version>
+            </dependency>
+            <!-- ========================================================== -->
+
+            <!-- ========================================================== -->
+            <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
+            <!-- 剔除bean的setter/getter -->
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+                <scope>provided</scope>
+            </dependency>
+            <!-- ========================================================== -->
+
+            <!-- ========================================================== -->
+            <!-- jarjwt -->
+            <dependency>
+                <groupId>io.jsonwebtoken</groupId>
+                <artifactId>jjwt</artifactId>
+                <version>${jjwt.version}</version>
+            </dependency>
+
+            <!-- session -->
+            <dependency>
+                <groupId>org.springframework.session</groupId>
+                <artifactId>spring-session</artifactId>
+                <version>${spring-session.version}</version>
+            </dependency>
+            <!--JSONObject -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${fastjson.version}</version>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter</artifactId>
+                <version>${spring-boot-starter.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-web</artifactId>
+                <version>${spring-boot-starter-web.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-test</artifactId>
+                <scope>test</scope>
+                <version>${spring-boot-starter-test.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-oauth2</artifactId>
+                <version>${spring-cloud-starter-oauth2.version}</version>
+            </dependency>
+
+            <!-- redis -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-data-redis</artifactId>
+                <version>${spring-boot-starter-data-redis.version}</version>
+            </dependency>
+
+            <!-- mysql+jdbc -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-jdbc</artifactId>
+                <version>${spring-boot-starter-jdbc.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql-connector-java.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.mybatis.spring.boot</groupId>
+                <artifactId>mybatis-spring-boot-starter</artifactId>
+                <version>${mybatis-spring-boot-starter.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.mybatis.generator</groupId>
+                <artifactId>mybatis-generator-core</artifactId>
+                <version>${mybatis.generator.version}</version>
+            </dependency>
+
+            <!-- 社交账号登录:QQ,微信,微博,其他 -->
+            <dependency>
+                <groupId>org.springframework.social</groupId>
+                <artifactId>spring-social-core</artifactId>
+                <version>${spring-social.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.social</groupId>
+                <artifactId>spring-social-web</artifactId>
+                <version>${spring-social.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.social</groupId>
+                <artifactId>spring-social-security</artifactId>
+                <version>${spring-social.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.social</groupId>
+                <artifactId>spring-social-config</artifactId>
+                <version>${spring-social.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>${junit.version}</version>
+                <scope>test</scope>
+            </dependency>
+
+            <!--json/Json array support-->
+            <dependency>
+                <groupId>com.fasterxml.jackson.module</groupId>
+                <artifactId>jackson-module-parameter-names</artifactId>
+                <version>${jackson-module-parameter-names.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.fasterxml.jackson.datatype</groupId>
+                <artifactId>jackson-datatype-jdk8</artifactId>
+                <version>${jackson-datatype-jdk8.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-core</artifactId>
+                <version>${jackson-core.verison}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.google.code.gson</groupId>
+                <artifactId>gson</artifactId>
+                <version>${gson.version}</version>
+            </dependency>
+
+            <!--热部署-->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-devtools</artifactId>
+                <optional>true</optional>
+                <scope>runtime</scope>
+                <version>${spring-boot-devtools.version}</version>
+            </dependency>
+
+            <!--alibaba-->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid</artifactId>
+                <version>${alibaba.druid.version}</version>
+            </dependency>
+
+            <!--通用Java开发操作包-->
+            <dependency>
+                <groupId>commons-lang</groupId>
+                <artifactId>commons-lang</artifactId>
+                <version>${commons-lang.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>commons-collections</groupId>
+                <artifactId>commons-collections</artifactId>
+                <version>${commons-collections.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>commons-beanutils</groupId>
+                <artifactId>commons-beanutils</artifactId>
+                <version>${commons-beanutils.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>commons-io</groupId>
+                <artifactId>commons-io</artifactId>
+                <version>${commons-io.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>commons-logging</groupId>
+                <artifactId>commons-logging</artifactId>
+                <version>${commons-logging.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>net.sf.ezmorph</groupId>
+                <artifactId>ezmorph</artifactId>
+                <version>${ezmorph.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>net.sf.json-lib</groupId>
+                <artifactId>json-lib</artifactId>
+                <version>${json-lib.version}</version>
+                <classifier>jdk15</classifier>
+            </dependency>
+
+            <!--swagger2 支持-->
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger2</artifactId>
+                <version>${springfox-swagger2.verion}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger-ui</artifactId>
+                <version>${springfox-swagger-ui.version}</version>
+            </dependency>
+
+            <!--ethereum web3j-->
+            <dependency>
+                <groupId>org.web3j</groupId>
+                <artifactId>core</artifactId>
+                <version>${web3j.core.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.bitcoinj</groupId>
+                <artifactId>bitcoinj-core</artifactId>
+                <version>${bitcoinj.version}</version>
+            </dependency>
+
+            <!--httpclient-->
+            <dependency>
+                <groupId>org.apache.httpcomponents</groupId>
+                <artifactId>httpclient</artifactId>
+                <version>${httpclient.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <!-- 统一模块的打包方式 -->
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven-compiler-plugin.version}</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>${spring-boot-maven-plugin.version}</version>
+                <!--<executions>-->
+                    <!--<execution>-->
+                        <!--<goals>-->
+                            <!--<goal>repackage</goal>-->
+                        <!--</goals>-->
+                    <!--</execution>-->
+                <!--</executions>-->
+            </plugin>
+            <plugin>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok-maven-plugin</artifactId>
+                <version>${lombok-maven-plugin.version}</version>
+            </plugin>
+        </plugins>
+    </build>
+</project>

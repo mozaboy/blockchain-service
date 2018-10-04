@@ -1,0 +1,59 @@
+server:
+  port: 40002
+
+spring:
+  application:
+      name: SERVICE-SERVER-BTC
+
+eureka:
+  client:
+    serviceUrl:
+      #本地开发测试
+      defaultZone: http://localhost:40001/eureka/
+      #联调测试
+      #defaultZone: http://10.99.22.138:7070/eureka/
+
+
+
+coinNodeInfo:
+  coinNodeServer: http://172.16.20.153:10001
+  coinNodeUserName: omnitest
+  coinNodePassword: omnitest
+  coinNodePropertyId: 1
+
+coinRpcMethod:
+# 获取私钥
+  dumpPrivateKey: dumpprivkey
+# 获取余额
+  getBalance: getbalance
+  getOmniBalance: omni_getbalance
+# 获取区块确认数
+  getBlockCount: getblockcount
+# 获取区块链信息
+  getBlockInfo: getblockchaininfo
+# 获取区块
+  getBlock: getblock
+# 获取区块哈希
+  getBlockHash: getblockhash
+# 创建钱包
+  getNewAddress: getnewaddress
+# 获取节点信息
+  getNodeInfo: getinfo
+# 获取交易信息
+  getTransaction: gettransaction
+  getOmniTransaction: omni_gettransaction
+# 获取钱包信息
+  getWalletInfo: omni_getinfo
+# 列出区块交易
+  listBlockTransactions: omni_listblocktransactions
+# 根据地址查询比特币余额
+  listAddressGroupings: listaddressgroupings
+  minConfirmation: 1
+# 转账到指定地址
+  sendToAddress: sendtoaddress
+#  转账
+  omniSend: omni_send
+#  校验地址
+  validateAddress: validateaddress
+#  USDT propertyId
+  usdtConfigPropertyId: 31

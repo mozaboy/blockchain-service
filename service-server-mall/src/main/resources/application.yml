@@ -1,0 +1,18 @@
+server:
+  port: 40004
+
+spring:
+  application:
+      name: SERVICE-SERVER-FABRIC
+
+eureka:
+  client:
+    serviceUrl:
+      #本地开发测试
+      defaultZone: http://localhost:40001/eureka/
+      #联调测试
+      #defaultZone: http://10.99.22.138:7070/eureka/
+
+  instance:
+    lease-renewal-interval-in-seconds: 5
+    lease-expiration-duration-in-seconds: 10

@@ -1,0 +1,11 @@
+
+${AnsiColor.BRIGHT_YELLOW}
+>>Powered by ${AnsiColor.BRIGHT_RED}Vonechain ${AnsiColor.BRIGHT_YELLOW}group<<
+
+${AnsiColor.BRIGHT_RED}
+
+ ____ ___ ___     ____ ____ ____ _  _ _ ____ ____    _  _ ____ ____    ____ ____ _  _ ____ _ ____
+ |     |  |__] __ [__  |___ |__/ |  | | |    |___ __ |\/| | __ |__/ __ |    |  | |\ | |___ | | __
+ |___  |  |       ___] |___ |  \  \/  | |___ |___    |  | |__] |  \    |___ |__| | \| |    | |__]
+
+

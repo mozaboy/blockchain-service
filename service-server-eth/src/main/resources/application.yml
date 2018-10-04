@@ -1,0 +1,32 @@
+server:
+  port: 40003
+
+spring:
+  application:
+      name: SERVICE-SERVER-ETH
+
+eureka:
+  client:
+    serviceUrl:
+      #本地开发测试
+      defaultZone: http://localhost:40001/eureka/
+      #联调测试
+      #defaultZone: http://10.99.22.138:7070/eureka/
+  instance:
+    lease-renewal-interval-in-seconds: 5
+    lease-expiration-duration-in-seconds: 10
+
+geth:
+  ip: https://ropsten.infura.io/T7xaLNblC4EjKs0YEybF:8545 #ropsten
+  #ip: https://mainnet.infura.io/T7xaLNblC4EjKs0YEybF:8545/
+  #newWalletPath: /root/ethererum_chain/data0/keystore/
+#  //newWalletPath: \Users\george73\SJYYWALLETADDRESS\ethererum_chain\data0\keystore
+  newWalletPath: F:\ethererum_chain\data0\keystore
+  gasPrice: 10  #GWei
+  gasLimit: 210000
+  fee: 0.005
+  collFee: 0.0005
+
+
+
+
