@@ -3,10 +3,10 @@ server:
 
 spring:
   application:
-    name: service-mgr-config
+    name: SERVICE-MGR-CONFIG
 # 配置对应的配置文件
   profiles:
-    active: dev
+    active: native
 
 # rabbitmq 配置
 #  rabbitmq:

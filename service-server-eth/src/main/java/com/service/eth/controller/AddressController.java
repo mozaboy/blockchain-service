@@ -5,7 +5,7 @@ import com.service.comm.model.dto.CreateAddressDTO;
 import com.service.comm.model.dto.ImportWalletAddressDTO;
 import com.service.comm.model.vo.CreateAddressVO;
 import com.service.comm.model.vo.CreatePublicAccountVO;
-import com.service.eth.service.AccountService;
+import com.service.eth.service.eth.service.AccountService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Map;
 
 import static com.service.comm.http.Url.*;
-
 /**
  * ETH地址相关controller
  */

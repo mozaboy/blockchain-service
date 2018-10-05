@@ -1,4 +1,4 @@
-package com.service.eth.config;
+package com.service.eth.service.eth.config;
 
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;

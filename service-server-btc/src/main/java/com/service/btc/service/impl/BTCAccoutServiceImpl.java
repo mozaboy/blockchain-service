@@ -1,8 +1,9 @@
 package com.service.btc.service.impl;
 
 import com.alibaba.fastjson.JSONObject;
-import com.service.btc.config.USDTConfig;
 import com.service.btc.service.IBTCAccoutService;
+import com.service.btc.config.USDTConfig;
+import com.service.btc.util.JsonUtil;
 import com.service.comm.controller.ResponseResult;
 import com.service.comm.model.dto.TransferDTO;
 import com.service.comm.model.vo.BTCTransferVO;
@@ -18,7 +19,6 @@ import java.math.BigDecimal;
 import static com.service.btc.common.ErrUnify.ERR_BALANCE;
 import static com.service.btc.common.JsonKey.ERR;
 import static com.service.btc.common.JsonKey.RESULT;
-import static com.service.btc.util.JsonUtil.isError;
 
 @Service
 public class BTCAccoutServiceImpl extends BTCServiceImpl implements IBTCAccoutService {
@@ -49,7 +49,7 @@ public class BTCAccoutServiceImpl extends BTCServiceImpl implements IBTCAccoutSe
 
         JSONObject json = doRequest(coinNodeRpcMethodConfig.getGetBalance(), null);
 
-        if (isError(json)) {
+        if (JsonUtil.isError(json)) {
             logger.error("获取BTC余额出错:{}", json.get(ERR));
             return new BigDecimal(ERR_BALANCE);
         }
@@ -85,7 +85,7 @@ public class BTCAccoutServiceImpl extends BTCServiceImpl implements IBTCAccoutSe
                 bitcoinTransferDTO.getToAddress(),    // toAddress
                 usdtConfig.getPropertyId(),
                 strAmount);
-        if (isError(jsonTransferResult)) {
+        if (JsonUtil.isError(jsonTransferResult)) {
             logger.error("USDT 转帐给{} value:{}  失败 ：", bitcoinTransferDTO.getToAddress(), strAmount, jsonTransferResult.get(ERR));
             return null;
         }

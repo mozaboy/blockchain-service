@@ -5,6 +5,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.service.btc.common.JsonKey;
 import com.service.btc.config.CoinNodeRpcMethodConfig;
 import com.service.btc.util.HttpUtil;
+import com.service.btc.util.JsonUtil;
 import org.apache.tomcat.util.codec.binary.Base64;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -20,7 +21,6 @@ import static com.service.btc.common.HttpKey.*;
 import static com.service.btc.common.JsonKey.*;
 import static com.service.btc.common.HttpValue.PARAM_HEADER_AUTHORIZATION_BASIC;
 import static com.service.btc.common.HttpValue.PARAM_JSON_RPC_VERSION;
-import static com.service.btc.util.JsonUtil.isError;
 
 public class BTCServiceImpl {
 
@@ -40,7 +40,7 @@ public class BTCServiceImpl {
     {
         JSONObject json = doRequest(strMethod);
 
-        if (isError(json)) {
+        if (JsonUtil.isError(json)) {
             logger.error("创建地址失败:{}", json.get(ERR));
             return "";
         }
@@ -75,7 +75,7 @@ public class BTCServiceImpl {
         json = doRequest(coinNodeRpcMethodConfig.getSendToAddress(), strAddressTo, dAmount);
 
 
-        if (isError(json)) {
+        if (JsonUtil.isError(json)) {
             logger.error("转帐给{} value:{}  失败 ：", strAddressTo, dAmount, json.get(JsonKey.ERR));
             return "";
         }

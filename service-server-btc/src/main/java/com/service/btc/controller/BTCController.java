@@ -7,6 +7,7 @@ import com.service.comm.model.dto.TransferDTO;
 import com.service.comm.model.vo.BTCTransferVO;
 import com.service.comm.model.vo.BTCWalletAdressVO;
 import com.service.comm.model.vo.BTCWalletBalanceVO;
+import com.service.comm.http.Url;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,10 +18,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.math.BigDecimal;
 
-import static com.service.comm.http.Url.*;
-
 @RestController
-@RequestMapping(SERVICE_SERVER_BTC + API_VERSION)
+@RequestMapping(Url.SERVICE_SERVER_BTC + Url.API_VERSION)
 public class BTCController {
 
     private Logger log = LoggerFactory.getLogger(BTCController.class);
@@ -33,7 +32,7 @@ public class BTCController {
      * @param
      * @return
      */
-    @PostMapping(BTCWALLETADRESS)
+    @PostMapping(Url.BTCWALLETADRESS)
     public ResponseResult<BTCWalletAdressVO> createBtcAccount(){
         log.info("************createBtcAccount start*************");
 //
@@ -52,7 +51,7 @@ public class BTCController {
      * @param btcBalanceDTO
      * @return
      */
-    @PostMapping(BTCWALLETBALANCE)
+    @PostMapping(Url.BTCWALLETBALANCE)
     public ResponseResult<BTCWalletBalanceVO> getBalance(@RequestBody BTCBalanceDTO btcBalanceDTO) {
 //        log.info("************getBalance start*************");
 //
@@ -75,7 +74,7 @@ public class BTCController {
      * @param transferDTO
      * @return
      */
-    @PostMapping(BTCTRANSFER)
+    @PostMapping(Url.BTCTRANSFER)
     public ResponseResult<BTCTransferVO> btcTransfer(@RequestBody TransferDTO transferDTO) {
         log.info("************btcTransfer start*************");
 
@@ -96,7 +95,7 @@ public class BTCController {
      * @param transferDTO
      * @return
      */
-    @PostMapping(USDTTRANSFER)
+    @PostMapping(Url.USDTTRANSFER)
     public ResponseResult<BTCTransferVO> usdtTransfer(@RequestBody TransferDTO transferDTO) {
         log.info("************usdtTransfer start*************");
 
@@ -117,7 +116,7 @@ public class BTCController {
      * @param btcBalanceDTO
      * @return
      */
-    @PostMapping(QUERYBTCTXSTATUS)
+    @PostMapping(Url.QUERYBTCTXSTATUS)
     public ResponseResult<BTCWalletBalanceVO> queryBtcTxStatus(@RequestBody BTCBalanceDTO btcBalanceDTO) {
 //        log.info("************queryBtcTxStatus start*************");
 //
@@ -140,7 +139,7 @@ public class BTCController {
      * @param transferDTO
      * @return
      */
-    @PostMapping(IMPORTWALLETADDRESS)
+    @PostMapping(Url.IMPORTWALLETADDRESS)
     public ResponseResult<BTCTransferVO> importWalletAddress(@RequestBody TransferDTO transferDTO) {
         log.info("************importWalletAddress start*************");
 

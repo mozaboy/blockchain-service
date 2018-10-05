@@ -1,8 +1,8 @@
 server:
-  port: 49200
+  port: 40009
 
 spring:
   application:
-    name: service-mgr-zipkin
+    name: SERVICE-MGR-ZIPKIN
   profiles:
     active: dev

@@ -1,7 +1,6 @@
-package com.service.eth.service.impl;
+package com.service.eth.service.eth.service.impl;
 
-import com.service.comm.model.dbo.DcAddressETHDO;
-import com.service.eth.service.IWalletAddressInfoService;
+import com.service.eth.service.eth.service.IWalletAddressInfoService;
 
 public class WalletAddressInfoServiceImpl implements IWalletAddressInfoService {
 

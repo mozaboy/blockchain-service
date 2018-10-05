@@ -2,7 +2,6 @@ package com.service.eth.service;
 
 import com.service.comm.model.dto.ETHTransferDTO;
 import com.service.comm.model.dto.TokenTransferDTO;
-import com.service.comm.model.dto.TransferDTO;
 import com.service.comm.model.vo.ETHTransferVO;
 import com.service.comm.model.vo.TokenTransferVO;
 import org.web3j.crypto.Credentials;

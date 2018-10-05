@@ -1,13 +1,13 @@
-package com.service.eth.service.impl;
+package com.service.eth.service.eth.service.impl;
 
 import com.service.comm.model.dto.ETHTransferDTO;
 import com.service.comm.model.dto.TokenTransferDTO;
 import com.service.comm.model.vo.ETHTransferVO;
 import com.service.comm.model.vo.TokenTransferVO;
-import com.service.eth.config.EthConfig;
+import com.service.eth.service.eth.config.EthConfig;
 import com.service.eth.controller.AddressController;
 import com.service.eth.service.TransactionService;
-import com.service.eth.utils.Web3JConnector;
+import com.service.eth.service.eth.utils.Web3JConnector;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -5,6 +5,7 @@ import com.service.comm.controller.ResponseResult;
 import com.service.comm.model.dto.TransferDTO;
 import com.service.comm.model.vo.BTCTransferVO;
 import com.service.comm.model.vo.BTCWalletAdressVO;
+import com.service.comm.http.Url;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,11 +14,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import static com.service.comm.http.Url.*;
-
 
 @RestController
-@RequestMapping(SERVICE_SERVER_BTC + API_VERSION)
+@RequestMapping(Url.SERVICE_SERVER_BTC + Url.API_VERSION)
 public class HDWalletController {
 
     private Logger log = LoggerFactory.getLogger(HDWalletController.class);
@@ -30,7 +29,7 @@ public class HDWalletController {
      * @param
      * @return
      */
-    @PostMapping(CREATEHDACCOUNT)
+    @PostMapping(Url.CREATEHDACCOUNT)
     public ResponseResult<BTCWalletAdressVO> createHDAccount(){
         log.info("************createHDAccount start*************");
 //
@@ -49,7 +48,7 @@ public class HDWalletController {
      * @param transferDTO
      * @return
      */
-    @PostMapping(IMPORTHDWALLETADDRESS)
+    @PostMapping(Url.IMPORTHDWALLETADDRESS)
     public ResponseResult<BTCTransferVO> importHDWalletAddress(@RequestBody TransferDTO transferDTO) {
         log.info("************importHDWalletAddress start*************");
 

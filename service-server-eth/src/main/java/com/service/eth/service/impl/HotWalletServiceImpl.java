@@ -1,7 +1,6 @@
-package com.service.eth.service.impl;
+package com.service.eth.service.eth.service.impl;
 
-import com.service.eth.service.IHotWalletService;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.service.eth.service.eth.service.IHotWalletService;
 
 public class HotWalletServiceImpl implements IHotWalletService
 {

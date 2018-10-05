@@ -1,5 +1,5 @@
 spring:
   application:
-    name: service-business-rabbitmq
+    name: SERVICE-SERVER-RABBITMQ
   profiles:
-    active: dev
+    active: prod

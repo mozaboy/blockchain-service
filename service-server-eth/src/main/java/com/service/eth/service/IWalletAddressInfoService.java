@@ -1,6 +1,4 @@
-package com.service.eth.service;
-
-import com.service.comm.model.dbo.DcAddressETHDO;
+package com.service.eth.service.eth.service;
 
 public interface IWalletAddressInfoService
 {

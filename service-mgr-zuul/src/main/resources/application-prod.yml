@@ -5,7 +5,7 @@ eureka:
     availabilityZones:
       default: ${APPLICATION_DOMAIN:${DOMAIN:defaultZone}}
     serviceUrl:
-      defaultZone: http://ctp.server-mgr-eureka.master.prod:52100/eureka/
+      defaultZone: http://localhost:40001/eureka/
     instance:
       leaseRenewalIntervalInSeconds: 5
       leaseExpirationDurationInSeconds: 10

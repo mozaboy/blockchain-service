@@ -3,11 +3,11 @@ server:
 
 spring:
   application:
-      name: SERVICE-EUREKA
+      name: SERVICE-MGR-EUREKA
 
 eureka:
   instance:
-    hostname: 127.0.0.1
+    hostname: localhost
   client:
     registerWithEureka: false
     fetchRegistry: false

@@ -1,6 +1,6 @@
-package com.service.eth.utils;
+package com.service.eth.service.eth.utils;
 
-import com.service.eth.config.EthConfig;
+import com.service.eth.service.eth.config.EthConfig;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.web3j.protocol.Web3j;

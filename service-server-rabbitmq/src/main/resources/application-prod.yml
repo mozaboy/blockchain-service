@@ -1,13 +1,11 @@
-server:
-  port: 55500
 spring:
   application:
-    name: SERVICE-BUSINESS-RABBITMQ
+    name: SERVICE-SERVER-RABBITMQ
   rabbitmq:
     username: onechain
     password: admin
     virtual-host: onechain
-    addresses: 172.31.36.119:5672,172.31.36.118:5672,172.31.36.117:5672
+    addresses: 47.75.196.12:5672,47.75.111.155:5672,47.52.130.114:5672
     listener:
       simple:
         auto-startup: true
@@ -18,7 +16,7 @@ spring:
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:52100/eureka/
+      defaultZone: http://localhost:40001/eureka/
     fetch-registry: true
   instance:
     lease-expiration-duration-in-seconds: 2
@@ -29,6 +27,6 @@ onechainmqconf:
   defaultExchange: ctpprodexchange
 
 # 日志配置
-logging:
-  level: info
-  config: classpath:logback/logback-prod.xml
+#logging:
+  #level: info
+  #config: classpath:logback/logback-prod.xml

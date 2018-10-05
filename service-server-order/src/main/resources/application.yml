@@ -1,9 +1,9 @@
 server:
-  port: 40004
+  port: 40006
 
 spring:
   application:
-      name: SERVICE-SERVER-FABRIC
+      name: SERVICE-SERVER-ORDER
 
 eureka:
   client:

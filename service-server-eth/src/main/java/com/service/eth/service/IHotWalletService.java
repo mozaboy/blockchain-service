@@ -1,4 +1,4 @@
-package com.service.eth.service;
+package com.service.eth.service.eth.service;
 
 public interface IHotWalletService
 {

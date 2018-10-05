@@ -1,8 +1,8 @@
 server:
-  port: 49100
+  port: 40008
 
 spring:
   application:
-    name: service-mgr-zuul
+    name: SERVICE-MGR-ZUUL
   profiles:
     active: dev

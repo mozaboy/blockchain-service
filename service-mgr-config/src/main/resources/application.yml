@@ -3,7 +3,7 @@
 #spring.cloud.config.server.git.password=your git password
 
 server:
-  port: 51100
+  port: 40010
 
 # 统一注册至Eureka集群
 eureka:
@@ -13,4 +13,4 @@ eureka:
     lease-expiration-duration-in-seconds: 10
   client:
     serviceUrl:
-      defaultZone: http://localhost:52100/eureka/
+      defaultZone: http://localhost:40001/eureka/
